@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const mongoose = require ('mongoose');
 
 const authRouter = require('./routers/authRouter');
+const postsRouter = require('./routers/postsRouter');
 
 //initialize express
 const app = express();
@@ -17,6 +18,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/auth', authRouter);
+app.use('/api/posts', postsRouter);
 
 //connecting the database
 mongoose
